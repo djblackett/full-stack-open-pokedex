@@ -7,6 +7,7 @@ app = "black-river-1708"
 primary_region = "yul"
 
 [services]
+processes = ["app"]
 [[services.ports]]
 handlers = ["tls", "http"]
 port = "443"
