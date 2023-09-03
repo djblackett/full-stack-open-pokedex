@@ -8,10 +8,7 @@ primary_region = "yul"
 
 [services]
 processes = ["app"]
-[[services.ports]]
-handlers = ["tls", "http"]
-port = "443"
-
+internal_port = 5000
 
 [[services.tcp_checks]]
 internal_port = 5000
@@ -21,7 +18,7 @@ restart_limit = 0
 timeout = "2s"
 
 [[services.http_checks]]
-#internal_port = 5000
+internal_port = 5000
 interval = 10000
 grace_period = "5s"
 method = "get"
