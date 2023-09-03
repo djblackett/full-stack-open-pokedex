@@ -25,6 +25,7 @@ app = "node app.js"
 [build.args]
 NODE_VERSION = "16.20.2"
 
+[services]
 [[services.ports]]
 handlers = ["tls", "http"]
 port = "443"
