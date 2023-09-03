@@ -25,13 +25,20 @@ app = "node app.js"
 [build.args]
 NODE_VERSION = "16.20.2"
 
+[[services.ports]]
+handlers = ["tls", "http"]
+port = "443"
+
+
 [[services.tcp_checks]]
+internal_port = 5000
 grace_period = "1s"
 interval = "15s"
 restart_limit = 0
 timeout = "2s"
 
 [[services.http_checks]]
+internal_port = 5000
 interval = 10000
 grace_period = "5s"
 method = "get"
