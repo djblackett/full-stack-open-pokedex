@@ -57,6 +57,11 @@
     "html-loader": "^1.1.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.3",
-    "style-loader": "^1.2.1"
+    "style-loader": "^1.2.1",
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-runtime": "^7.10.0",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@flydotio/dockerfile": "^0.4.8"
   }
 }
