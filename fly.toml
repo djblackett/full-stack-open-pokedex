@@ -28,6 +28,7 @@ grace_period = "10s"
 interval = "15s"
 restart_limit = 0
 timeout = "10s"
+processes = ["app"]
 
 #[[services.http_checks]]
 #interval = 10000
