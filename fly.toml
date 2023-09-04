@@ -6,6 +6,12 @@
 app = "black-river-1708"
 primary_region = "yul"
 
+
+[build]
+[build.args]
+NODE_VERSION = "16.20.2"
+
+
 [services]
 processes = ["app"]
 internal_port = 5000
@@ -41,8 +47,4 @@ release_command = "npm run build"
 
 [processes]
 app = "node app.js"
-
-[build]
-[build.args]
-NODE_VERSION = "16.20.2"
 
