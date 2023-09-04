@@ -4,7 +4,9 @@
 #
 
 app = "black-river-1708"
+
 primary_region = "yul"
+
 auto_stop_machines = true
 auto_start_machines = true
 min_machines_running = 1
@@ -45,13 +47,13 @@ auto_rollback = true
 #    processes = ["app"]
 
 [[services.http_checks]]
-interval = 10000
-grace_period = "5s"
-method = "get"
-path = "/"
-protocol = "http"
-timeout = 2000
-tls_skip_verify = false
+    interval = 10000
+    grace_period = "5s"
+    method = "get"
+    path = "/"
+    protocol = "http"
+    timeout = 2000
+    tls_skip_verify = false
 
 
 
