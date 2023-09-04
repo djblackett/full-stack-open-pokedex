@@ -24,7 +24,7 @@ restart_limit = 0
 timeout = "2s"
 
 [[services.http_checks]]
-internal_port = 5000
+internal_port = 8080
 interval = 10000
 grace_period = "5s"
 method = "get"
