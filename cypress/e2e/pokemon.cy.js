@@ -9,7 +9,7 @@ describe('Pokedex', function () {
   })
 
   it('can navigate to next pokemon', function () {
-    cy.visit('http://localhost:/' + PORT)
+    cy.visit('http://localhost:' + PORT)
     cy.contains('caterpie').click()
     cy.contains('Next').click()
     cy.contains('metapod')
