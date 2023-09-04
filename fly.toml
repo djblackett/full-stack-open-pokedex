@@ -14,7 +14,7 @@ NODE_VERSION = "16.20.2"
 
 [services]
 processes = ["app"]
-internal_port = 5000
+internal_port = 8080
 
 [[services.tcp_checks]]
 internal_port = 5000
