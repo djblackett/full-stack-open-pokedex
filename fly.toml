@@ -5,6 +5,9 @@
 
 app = "black-river-1708"
 primary_region = "yul"
+auto_stop_machines = true
+auto_start_machines = true
+min_machines_running = 0
 
 
 [build]
@@ -14,14 +17,10 @@ NODE_VERSION = "16.20.2"
 [http_service]
 internal_port = 8080
 force_https = true
-auto_stop_machines = true
-auto_start_machines = true
-min_machines_running = 0
 processes = ["app"]
 
 
-[[services]]
-processes = ["app"]
+
 
 
 [[services.tcp_checks]]
@@ -38,8 +37,6 @@ timeout = "10s"
 #protocol = "http"
 #timeout = 2000
 #tls_skip_verify = false
-
-
 
 [deploy]
 release_command = "npm run build"
