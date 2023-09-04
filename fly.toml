@@ -10,12 +10,18 @@ auto_start_machines = true
 min_machines_running = 1
 
 
+[experimental]
+allowed_public_ports = []
+auto_rollback = true
+
+
 [build]
     [build.args]
         NODE_VERSION = "16.20.2"
 
 [deploy]
     release_command = "npm run build"
+
 
 [processes]
     app = "node app.js"
@@ -30,11 +36,12 @@ min_machines_running = 1
     processes = ["app"]
 
 
-[[services.tcp_checks]]
-    grace_period = "10s"
-    interval = "15s"
-    restart_limit = 0
-    timeout = "10s"
+
+#[[services.tcp_checks]]
+#    grace_period = "10s"
+#    interval = "15s"
+#    restart_limit = 0
+#    timeout = "10s"
 #    processes = ["app"]
 
 #[[services.http_checks]]
