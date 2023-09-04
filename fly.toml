@@ -7,9 +7,7 @@ app = "black-river-1708"
 
 primary_region = "yul"
 
-auto_stop_machines = true
-auto_start_machines = true
-min_machines_running = 1
+
 
 
 [experimental]
@@ -28,15 +26,25 @@ auto_rollback = true
 [processes]
     app = "node app.js"
 
-[http_service]
-    internal_port = 8080
-    force_https = false
-    processes = ["app"]
+
+
 
 [[services]]
     internal_port = 8080
     processes = ["app"]
+    protocol = "tcp"
+    auto_stop_machines = true
+    auto_start_machines = true
+    min_machines_running = 0
 
+[[services.ports]]
+    force_https = true
+    handlers = ["http"]
+    port = 80
+
+[[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
 
 
 #[[services.tcp_checks]]
@@ -54,6 +62,11 @@ auto_rollback = true
     protocol = "http"
     timeout = 2000
     tls_skip_verify = false
+
+[[services.http_service]]
+    internal_port = 8080
+    force_https = true
+    processes = ["app"]
 
 
 
