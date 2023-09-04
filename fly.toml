@@ -11,30 +11,31 @@ min_machines_running = 0
 
 
 [build]
-  [build.args]
-    NODE_VERSION = "16.20.2"
+    [build.args]
+        NODE_VERSION = "16.20.2"
 
 [deploy]
-release_command = "npm run build"
+    release_command = "npm run build"
+
+[processes]
+    app = "node app.js"
 
 [http_service]
-  internal_port = 8080
-  force_https = false
-  processes = ["app"]
+    internal_port = 8080
+    force_https = false
+    processes = ["app"]
 
 [[services]]
-http_checks = []
-internal_port = 8080
-processes = ["app"]
-[processes]
-  app = "node app.js"
+    internal_port = 8080
+    processes = ["app"]
+
 
 [[services.tcp_checks]]
-grace_period = "10s"
-interval = "15s"
-restart_limit = 0
-timeout = "10s"
-processes = ["app"]
+    grace_period = "10s"
+    interval = "15s"
+    restart_limit = 0
+    timeout = "10s"
+#    processes = ["app"]
 
 #[[services.http_checks]]
 #interval = 10000
