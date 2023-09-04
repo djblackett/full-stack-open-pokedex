@@ -11,20 +11,26 @@ primary_region = "yul"
 [build.args]
 NODE_VERSION = "16.20.2"
 
+[http_service]
+internal_port = 5000
+force_https = true
+auto_stop_machines = true
+auto_start_machines = true
+min_machines_running = 0
+processes = ["app"]
+
 
 [services]
 processes = ["app"]
-internal_port = 8080
+#internal_port = 8080
 
 [[services.tcp_checks]]
-internal_port = 5000
 grace_period = "1s"
 interval = "15s"
 restart_limit = 0
 timeout = "2s"
 
 [[services.http_checks]]
-internal_port = 8080
 interval = 10000
 grace_period = "5s"
 method = "get"
@@ -34,13 +40,6 @@ timeout = 2000
 tls_skip_verify = false
 
 
-[http_service]
-  internal_port = 5000
-  force_https = true
-  auto_stop_machines = true
-  auto_start_machines = true
-  min_machines_running = 0
-  processes = ["app"]
 
 [deploy]
 release_command = "npm run build"
