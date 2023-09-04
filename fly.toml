@@ -7,9 +7,6 @@ app = "black-river-1708"
 
 primary_region = "yul"
 
-
-
-
 [experimental]
 allowed_public_ports = []
 auto_rollback = true
@@ -25,8 +22,6 @@ auto_rollback = true
 
 [processes]
     app = "node app.js"
-
-
 
 
 [[services]]
