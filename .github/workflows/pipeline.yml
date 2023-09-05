@@ -46,7 +46,7 @@ jobs:
 
   tag_release:
     needs: [ simple_deployment_pipeline ]
-    if: ${{ github.event_name == 'push' }} && !contains(join($COMMIT_MESSAGES), "# skip")
+    if: ${{ github.event_name == 'push' }} && !contains(join(toJson(github.event.commits.*.message)), "# skip")
     runs-on: ubuntu-20.04
     steps:
     -  uses: actions/checkout@v3
@@ -62,7 +62,7 @@ jobs:
   a_test_job:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: github context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
