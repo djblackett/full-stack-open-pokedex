@@ -6,14 +6,14 @@ const app = express()
 const PORT = process.env.PORT || 8080
 
 app.get('/health', (req, res) => {
-  if (res.status !== 200) {
-    throw new Error('Health check failed')
+  if (res.statusCode !== 200) {
+    res.status(500).send('error')
   }
-  res.send('ok')
+  res.status(200).send('ok')
 })
 
 app.get('/version', (req, res) => {
-  res.send('5') // change this string to ensure a new version deployed
+  res.send('6') // change this string to ensure a new version deployed
 })
 
 app.use(express.static('dist'))
