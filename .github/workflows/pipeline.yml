@@ -36,7 +36,7 @@ jobs:
 
   tag_release:
     needs: [ simple_deployment_pipeline ]
-    if: github.event.pull_request.merged == true
+#    if: github.event.pull_request.merged == true
     runs-on: ubuntu-20.04
     steps:
     -  uses: anothrNick/github-tag-action@1.64.0 # Don't use @master or @v1 unless you're happy to test the latest version
