@@ -12,7 +12,6 @@ on:
 jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-20.04
-    uses:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -54,6 +53,7 @@ jobs:
           severity: warn
           details: Test Cancelled!
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+
 
   deploy:
     name: Deploy app
