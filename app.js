@@ -6,6 +6,9 @@ const app = express()
 const PORT = process.env.PORT || 8080
 
 app.get('/health', (req, res) => {
+  if (res.status !== 200) {
+    throw new Error('Health check failed')
+  }
   res.send('ok')
 })
 
