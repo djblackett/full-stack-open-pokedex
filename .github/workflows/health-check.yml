@@ -1,11 +1,8 @@
 name: Periodic health check
 
 on:
-  push:
-    branches:
-      - main
-
   schedule:
+    # change this to once per day after it is verified working
     - cron: '15 * * * *'
 
 jobs:
