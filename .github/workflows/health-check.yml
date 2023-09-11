@@ -2,8 +2,8 @@ name: Periodic health check
 
 on:
   schedule:
-    # change this to once per day after it is verified working
-    - cron: '15 * * * *'
+    # Every Monday at 1PM UTC (9AM EST)
+     - cron: "0 13 * * 1"
 
 jobs:
   periodic_health_check:
