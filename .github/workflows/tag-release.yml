@@ -2,6 +2,7 @@ name: Bump Version
 on:
   workflow_call:
   push:
+    branches:
     - split-workflow
 jobs:
   Pipeline:
