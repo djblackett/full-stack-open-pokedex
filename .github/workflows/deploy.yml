@@ -6,11 +6,10 @@ on:
     branches:
       - split-workflow
 jobs:
-
   Pipeline:
     uses: ./.github/workflow/pipeline.yml
   deploy:
-    name: Deploy app
+#    name: Deploy app
     needs: [ Pipeline ]
     if: ${{ github.event_name == 'push' && !contains(join(toJson(github.event.commits.*.message)), '# skip') }}
     runs-on: ubuntu-latest

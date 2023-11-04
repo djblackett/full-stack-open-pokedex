@@ -4,8 +4,10 @@ on:
 jobs:
   Pipeline:
     uses: ./.github/workflows/pipeline.yml
+  Deployment:
+    uses: ./.github/workflows/deploy.yml
   tag_release:
-    needs: [ Pipeline ]
+    needs: [ Pipeline, Deployment ]
     if: ${{ github.event_name == 'push' && !contains(join(toJson(github.event.commits.*.message)), '# skip') }}
     runs-on: ubuntu-20.04
     steps:
