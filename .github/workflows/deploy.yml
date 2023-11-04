@@ -2,13 +2,15 @@ name: Deployment
 
 on:
   workflow_call:
-    secrets: inherit
+    secrets:
+      webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 #  push:
 #    branches:
 #      - split-workflow
 jobs:
   Pipeline:
     uses: ./.github/workflows/pipeline.yml
+    secrets: inherit
   deploy:
 #    name: Deploy app
     needs: [ Pipeline ]

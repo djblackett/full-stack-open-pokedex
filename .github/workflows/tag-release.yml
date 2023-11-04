@@ -7,6 +7,7 @@ on:
 jobs:
   Deployment:
     uses: ./.github/workflows/deploy.yml
+    secrets: inherit
   tag_release:
     needs: [ Deployment ]
     if: ${{ github.event_name == 'push' && !contains(join(toJson(github.event.commits.*.message)), '# skip') }}
