@@ -2,9 +2,9 @@ name: Deployment
 
 on:
   workflow_call:
-  push:
-    branches:
-      - split-workflow
+#  push:
+#    branches:
+#      - split-workflow
 jobs:
   Pipeline:
     uses: ./.github/workflows/pipeline.yml

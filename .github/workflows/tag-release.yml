@@ -1,6 +1,8 @@
 name: Bump Version
 on:
   workflow_call:
+  push:
+    - split-workflow
 jobs:
   Pipeline:
     uses: ./.github/workflows/pipeline.yml

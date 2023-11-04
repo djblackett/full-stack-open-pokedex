@@ -2,10 +2,10 @@ name: Pipeline
 
 on:
   workflow_call:
-  push:
-    branches:
-      - main
-      - split-workflow
+#  push:
+#    branches:
+#      - main
+#      - split-workflow
 
   pull_request:
     branches: [ main ]
