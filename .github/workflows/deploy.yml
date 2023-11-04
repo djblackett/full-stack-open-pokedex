@@ -2,8 +2,8 @@ name: Deployment
 
 on:
   workflow_call:
-    secrets:
-      webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+#    secrets:
+#      webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 #  push:
 #    branches:
 #      - split-workflow
